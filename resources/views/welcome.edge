@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Adonis</title>
+</head>
+
+<body
+  style="background: rgba(183,222,237,1);
+  background: -moz-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 13%, rgba(113,206,239,1) 37%, rgba(33,180,226,1) 49%, rgba(183,222,237,1) 86%, rgba(183,222,237,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(183,222,237,1)), color-stop(13%, rgba(183,222,237,1)), color-stop(37%, rgba(113,206,239,1)), color-stop(49%, rgba(33,180,226,1)), color-stop(86%, rgba(183,222,237,1)), color-stop(100%, rgba(183,222,237,1)));
+  background: -webkit-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 13%, rgba(113,206,239,1) 37%, rgba(33,180,226,1) 49%, rgba(183,222,237,1) 86%, rgba(183,222,237,1) 100%);
+  background: -o-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 13%, rgba(113,206,239,1) 37%, rgba(33,180,226,1) 49%, rgba(183,222,237,1) 86%, rgba(183,222,237,1) 100%);
+  background: -ms-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 13%, rgba(113,206,239,1) 37%, rgba(33,180,226,1) 49%, rgba(183,222,237,1) 86%, rgba(183,222,237,1) 100%);
+  background: linear-gradient(to right, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 13%, rgba(113,206,239,1) 37%, rgba(33,180,226,1) 49%, rgba(183,222,237,1) 86%, rgba(183,222,237,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed', GradientType=1 );">
+  <section>
+    <div class="logo"></div>
+    <div class="title"></div>
+    <div class="subtitle">
+        <h1 style="text-align:left;font-size: 25px;">
+            Pagina principal
+          </h1>
+        <style>
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+          }
+
+          li {
+            float: left;
+          }
+
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size:9px;
+
+          }
+
+          li a:hover {
+            background-color: #111;
+          }
+        </style>
+        </head>
+
+        <body>
+
+          <ul>
+          <li><a href="/productos">Lista de Productos</a></li>
+        <li><a href="/producto/nuevo">Agregar producto</a></li>
+        <li><a href="/ventas">Lista de Ventas</a></li>
+        <li><a href="/inventarios">Lista de Inventario</a></li>
+        <li><a href="/venta/nueva">Comprar Productos</a></li>
+          </ul>
+          <p style="text-align:center;font-size:12px">Nuestra compania busca ofrecer la variedad <br>
+            de productos mas completa del mercado<br>
+            con capacidad del usuario de ver precios<br>
+            y agregar productos y preciosa nuestros registros
+              </p>
+          <h4 style="text-align:center">Ventas totales: {{contador}} </h4>
+    </div>
+  </section>
+</body>
+
+</html>

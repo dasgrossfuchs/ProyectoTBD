@@ -1,0 +1,27 @@
+CREATE OR REPLACE FUNCTION reflejoventa()
+RETURNS trigger AS $$
+BEGIN
+update inventarios
+set cantidad_antes = cantidad_ahora, cantidad_ahora = cantidad_ahora - new.cantidad, updated_at = current_timestamp 
+where producto_id = new.producto_id;
+RETURN NULL;
+END;
+$$ LANGUAGE PLPGSQL;
+
+CREATE TRIGGER inventarioactualizado After INSERT ON detalle_ventas FOR
+EACH ROW EXECUTE PROCEDURE reflejoventa();
+//
+CREATE OR REPLACE FUNCTION AumentarStock()
+RETURNS trigger AS $$
+BEGIN
+if(productos.nombre = new.nombre) then
+update inventarios
+set cantidad_antes = cantidad_ahora, cantidad_ahora = cantidad_ahora + new.cantidad, updated_at = current_timestamp 
+where producto_id = (select id from productos where new.nombre = productos.nombre);
+RETURN NULL;
+end if;
+
+END;
+$$ LANGUAGE PLPGSQL;
+CREATE TRIGGER ReStock before INSERT ON productos FOR
+EACH ROW EXECUTE PROCEDURE AumentarStock();
